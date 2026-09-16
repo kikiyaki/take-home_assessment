@@ -29,7 +29,6 @@ process.on("uncaughtException", (err) => {
 const startServer = async () => {
   const safePort = await checkPort(PORT);
   const final_port = await getPort({ port: safePort });
-
   app.listen(final_port, () => {
     console.log(`Server running on port ${final_port}`);
   });
